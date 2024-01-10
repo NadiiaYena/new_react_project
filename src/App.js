@@ -7,7 +7,6 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Note from './components/Note';
 import Error from './components/Error';
-import NoteWrapper from './components/NoteWrapper'
 
 function App() {
   return (
@@ -19,8 +18,8 @@ function App() {
                     <Route exact path="/" element={<Main/>}/>
                     <Route path="/about" element={<About/>}/>
                     <Route path="/create" element={<Create/>}/>
-                    <Route exact path="/note" element={<Note/>} key={window.location.pathname}/>
-                    <Route exact path="/note/:noteURL" element={<NoteWrapper/>}/>
+                    <Route exact path="/note" element={<Note/>} />
+                    <Route exact path="/note/:noteURL" element={<Note/>}/>
                     <Route path="*" element={<Error/>}/>
                 </Routes>
             </Router>

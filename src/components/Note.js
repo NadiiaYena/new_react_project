@@ -6,6 +6,7 @@ import env from "../env.json"
 
 function Note() {
     let { noteURL } = useParams()
+    console.log('noteURL', noteURL)
     const [ noteText, setNoteText ]= useState('')
     const [ lineClass, setLineClass] = useState('hide')
     const [ formClass, setFormClass] = useState('')
@@ -15,11 +16,8 @@ function Note() {
 
 
     useEffect(()=> {
+        console.log('test')
         if(noteURL !== undefined) { 
-            const pathName = window.location.pathname;
-            const parts = pathName.split('/');
-            const lastPart = parts.pop();
-            setHash(lastPart)
 
             fetch(env.urlBackend, {
                 method: "POST",
@@ -27,7 +25,6 @@ function Note() {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
                 body: JSON.stringify({"url": noteURL})
-            
             }
             )
             .then( respons => respons.json())
@@ -40,6 +37,12 @@ function Note() {
                     // setUrl(env.url+"/"+respons.url)
                     setFormClass("hide")
                     setLineClass("note-hash")
+
+                    const pathName = window.location.pathname;
+                    const parts = pathName.split('/');
+                    const lastPart = parts.pop();
+                    setHash(lastPart)
+        
                 }
                 else if (!respons.result) {
                     console.log(respons.result)
@@ -56,7 +59,7 @@ function Note() {
             setErrorClass('hide')
 
         }
-    }, [])
+    }, [noteURL])
 
     const getNote=(event) =>{
         event.preventDefault()
