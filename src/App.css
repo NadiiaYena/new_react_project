@@ -1,38 +1,259 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    text-align: center;
+    
   }
-}
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  .component {
+    padding: 30px 50px;
+    /* height: auto; */
+    box-sizing: border-box;
+    /* height: 100%; */
   }
+
+  
+  .main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 100vh; */
+  }
+
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 24px;
+    background-color: #282c34;
+    padding: 10px 50px;
+    color: #ffffff;
+
+  }
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    background-color: #282c34;
+    box-sizing: border-box;
+    width: 100%;
+
+  }
+  .nav-name {
+    size: 42px;
+    color: #cbcbcb;
+    text-decoration: none;
+    
+  }
+  .logo {
+    color: #ffffff;
+    font-size: 20px;
+  }
+
+  .about,
+  .main-page {
+    size: 24px;
+    flex: 1;
+    color: #303030;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+
+}
+
+.about-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.about h2 {
+    text-align: left;
+    padding: 0;
+    margin-bottom: 12px;
+}
+.about p{
+    text-align: justify;
+    padding: 0;
+    margin: 0;
+}
+
+.text {
+    size: 24px;
+    color: #282c34;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+
+}
+
+.text1 {
+    text-align: left;
+}
+
+.main-page .text {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.main-page .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-left: 24px;
+    margin: 0;
+
+}
+.main-page .list li{
+    text-align: left;
+}
+
+  .error {
+    background-color: rgb(251, 225, 233);
+    padding: 0 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: red;
+    flex: 1;
+  }
+
+
+
+  .footer {
+    /* position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    width: 100%;
+    background-color: #282c34;
+    
+    
+  }
+  .footer-text {
+    color: #cbcbcb;
+    padding: 10px 50px;
+    
+  }
+
+  .my-button {
+    background-color: #0055ff;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    border: 2px solid #0055ff;
+    cursor: pointer;
+    
+  }
+  .main-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+    .create {
+        flex: 1;
+    }
+  .create-input,
+  .create-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .create-input,
+  .note-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .create-button,
+  .note-button {
+    display: flex;
+    justify-content: end;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  textarea,
+  input{
+    padding: 5px;
+    resize: vertical;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .note {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .note-hash {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hash-area {
+    background-color: #9be6f5;
+    color: #02587a;
+    padding: 10px;
+    text-align: left;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 100%;
+    
+  }
+
+  .error-message {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .error-block {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #fb8686;
+    background-color: #fb9999;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .hide{
+    display: none;
+}
+
+.active {
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 376px) {
+    .header-nav {
+        flex-direction: column;
+    }
 }
