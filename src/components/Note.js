@@ -11,13 +11,16 @@ function Note() {
     const [ lineClass, setLineClass] = useState('hide')
     const [ formClass, setFormClass] = useState('')
     const [ errorClass, setErrorClass] = useState('hide')
-    const [ hash, setHash ] = useState('')
+    // const [ hash, setHash ] = useState('')
+    console.log('noteText1 - ', noteText, 'hash-', noteURL)
+
 
 
 
     useEffect(()=> {
-        console.log('test')
+        console.log('useEffect')
         if(noteURL !== undefined) { 
+            console.log('fetch on')
 
             fetch(env.urlBackend, {
                 method: "POST",
@@ -31,35 +34,29 @@ function Note() {
             .then(respons => {
                 console.log(respons)
                 if(respons.result){
+                    console.log('first')
                     console.log(respons.result)
                     setNoteText(respons.note)
+                    console.log('noteText - ', noteText)
                     setErrorClass('hide')
-                    // setUrl(env.url+"/"+respons.url)
                     setFormClass("hide")
-                    setLineClass("note-hash")
-
-                    const pathName = window.location.pathname;
-                    const parts = pathName.split('/');
-                    const lastPart = parts.pop();
-                    setHash(lastPart)
-        
+                    setLineClass("")
                 }
                 else if (!respons.result) {
-                    console.log(respons.result)
+                    console.log('ErrorClass',respons.result)
                     setFormClass('hide')
                     setLineClass('hide')
                     setErrorClass('')
-
-
                 }
             })
         } else {
+            console.log('form')
             setFormClass('')
             setLineClass('hide')
             setErrorClass('hide')
 
         }
-    }, [noteURL])
+    }, [noteURL, noteText])
 
     const getNote=(event) =>{
         event.preventDefault()
@@ -84,7 +81,7 @@ function Note() {
     return (
         <div className="note component">
             <div className={`note-input ${lineClass}`}> 
-                <div>Note: {hash}</div>
+                <div>Note: {noteURL}</div>
                 <div className="hash-area">{noteText}</div>
                 <div className="note-button" >
                     <Button label="Look for a Note one more" onClick={searchNote} ></Button>

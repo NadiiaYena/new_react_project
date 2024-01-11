@@ -93,16 +93,13 @@
 .text {
     size: 24px;
     color: #282c34;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 12px;
-
 }
 
 .text1 {
-    text-align: left;
+    text-align: justify;
+    padding: 0;
+    margin: 0;
+
 }
 
 .main-page .text {
@@ -134,8 +131,6 @@
     color: red;
     flex: 1;
   }
-
-
 
   .footer {
     /* position: absolute;
@@ -169,6 +164,7 @@
     align-items: center;
     width: 100%;
     box-sizing: border-box;
+    margin-bottom: 10px;
   }
 
     .create {
@@ -250,6 +246,10 @@
 
 .active {
     color: #ffffff;
+}
+h1 {
+    margin: 0;
+    padding: 0;
 }
 
 @media only screen and (max-width: 376px) {
